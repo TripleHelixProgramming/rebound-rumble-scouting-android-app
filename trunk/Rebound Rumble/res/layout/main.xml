@@ -30,6 +30,15 @@
 				android:text="Scouting Form"
 				android:textStyle="bold"
 				/>
+			
+			<EditText
+				android:id="@+id/matchNum"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:numeric="decimal"
+				android:hint="Match #"
+				android:gravity="center"
+				/>
 				
 			<EditText
 				android:id="@+id/num"
@@ -127,15 +136,7 @@
 				</TableRow>
 
 			</TableLayout>
-		
-			<EditText 
-				android:id="@+id/comments"
-				android:layout_width="fill_parent"
-				android:layout_height="wrap_content"
-				android:hint="Comments..."
-				android:gravity="left"
-				android:singleLine="true"
-				/>
+			
 
 			<Button
 				android:id="@+id/submit"

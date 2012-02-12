@@ -40,9 +40,9 @@ public class ReboundRumble extends Activity {
 	private int tN;
 	private int hHoop1, hHoop2, hHoop3;
 	private int tHoop1, tHoop2, tHoop3;
-	private String balan, comms;
+	private String balan;
 	
-	private String file = "device";
+	private String file = "SCOUTING";
 	private String fileType = ".txt";
 	private String folderName = "REBOUND RUMBLE DATA";
 	
@@ -63,7 +63,7 @@ public class ReboundRumble extends Activity {
     	
     	if(readData() == null)
     	{
-    		formNum = Integer.parseInt(PreferenceManager.getDefaultSharedPreferences(this).getString("newMatchNum", "1"));
+    		formNum = 1;
     		loadForm();
     	}else
     	{
@@ -76,7 +76,16 @@ public class ReboundRumble extends Activity {
     	//***************************************************************
     	//DATA SUBMISSION
     	
-    	EditText eData = (EditText) findViewById(R.id.num);
+    	EditText eData = (EditText) findViewById(R.id.matchNum);
+    	if(eData.getText().toString().equals(""))
+    	{
+    		//do nothing, use automatically set one
+    	}else
+    	{
+    		formNum = Integer.parseInt(eData.getText().toString());
+    	}
+    	
+    	eData = (EditText) findViewById(R.id.num);
     	if(eData.getText().toString().equals(""))
     	{
     		tN = 0;
@@ -87,15 +96,6 @@ public class ReboundRumble extends Activity {
     	
     	RadioButton rb = (RadioButton) findViewById(R.id.balanceYes);
     	balan = Boolean.toString(rb.isChecked());
-    	
-    	eData = (EditText) findViewById(R.id.comments);
-    	if(eData.getText().toString().equals(""))
-    	{
-    		comms = "none";
-    	}else
-    	{
-    		comms = eData.getText().toString();
-    	}
     	
     	writeData();
     	
@@ -114,7 +114,11 @@ public class ReboundRumble extends Activity {
     	sc.fullScroll(ScrollView.FOCUS_UP);
     	
     	TextView title = (TextView) findViewById(R.id.title);
-    	title.setText("Scouting Form [" + formNum + "]");
+    	title.setText("Scouting Form");
+    	
+    	EditText matchNumber = (EditText) findViewById(R.id.matchNum);
+    	matchNumber.setText("");
+    	matchNumber.setHint("Match #");
     	
     	EditText teamNumber = (EditText) findViewById(R.id.num);
     	teamNumber.setText("");
@@ -148,19 +152,15 @@ public class ReboundRumble extends Activity {
     	rb.setChecked(false);
     	rb = (RadioButton) findViewById(R.id.balanceNo);
     	rb.setChecked(true);
-    	
-    	EditText comments = (EditText) findViewById(R.id.comments);
-    	comments.setText("");
-    	comments.setHint("Comments...");
     }
     
     
     private BufferedReader readData()
     {
     	SharedPreferences preference = PreferenceManager.getDefaultSharedPreferences(this);
-    	file = preference.getString("dev", "device");
-    	folderName = "REBOUND RUMBLE DATA";
-    	int numMultiple = Integer.parseInt(preference.getString("mult", "0"));
+    	//file = preference.getString("dev", "device");
+    	//folderName = "REBOUND RUMBLE DATA";
+    	//int numMultiple = Integer.parseInt(preference.getString("mult", "0"));
     	
     	File root = Environment.getExternalStorageDirectory();
     	
@@ -173,7 +173,7 @@ public class ReboundRumble extends Activity {
     			return null;
     		}
     			
-    			String fileS = file + Integer.toString(numMultiple) + fileType;
+    			String fileS = file + fileType;
     			File file = new File(fold, fileS);
     			
     			if(file.exists())
@@ -203,9 +203,9 @@ public class ReboundRumble extends Activity {
     private void writeData()
     {
     	SharedPreferences preference = PreferenceManager.getDefaultSharedPreferences(this);
-    	file = preference.getString("dev", "device");
+    	String device = preference.getString("dev", "device");
     	//folderName = preference.getString("fold", "REBOUND RUMBLE DATA");
-    	int numMultiple = Integer.parseInt(preference.getString("mult", "0"));
+    	//int numMultiple = Integer.parseInt(preference.getString("mult", "0"));
     	
     	File root = Environment.getExternalStorageDirectory();
     	
@@ -227,14 +227,14 @@ public class ReboundRumble extends Activity {
     		//WRITE DATA
     		try
     		{	
-    			String fileS = file + Integer.toString(numMultiple) + fileType;
+    			String fileS = file + fileType;
     			File file = new File(fold, fileS);
     			FileWriter tWrite = new FileWriter(file, true); //append to file
     			BufferedWriter output = new BufferedWriter(tWrite);
     			
 				output.append(formNum + " " + tN + " " + hHoop1 + " " + hHoop2 + " " + hHoop3 
 									  + " " + tHoop1 + " " + tHoop2 + " " + tHoop3
-									  + " " + balan + " " + comms + "\n");
+									  + " " + balan + " " + device + "\n");
 				
 				output.flush();
 				output.close();
