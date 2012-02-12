@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:background="@color/bg"
+	>
+	<ScrollView
+		android:id="@+id/scroll"
+		android:orientation="vertical"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		>
+		<LinearLayout
+			android:id = "@+id/layout"
+    		android:orientation = "vertical"
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="fill_parent"
+	    	>
+		
+			<TextView
+				android:id="@+id/title"
+				android:gravity="center"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:textColor="@color/fontColor"
+				android:textSize="@dimen/fontSize"
+				android:text="Scouting Form"
+				android:textStyle="bold"
+				/>
+				
+			<EditText
+				android:id="@+id/num"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:numeric="decimal"
+				android:hint="Team #"
+				android:gravity="center"
+				/>
+				
+			
+			<TextView android:textColor="@color/fontColor" android:text="Hybrid Mode" android:layout_height="wrap_content" android:textSize="@dimen/fontSize" android:layout_width="fill_parent" android:gravity="center" android:textStyle="bold"></TextView>
+				
+			
+			<TableLayout
+				android:id="@+id/shotTable"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				>
+				
+				<TableRow>
+				
+					<Button android:onClick="hHoop1M" android:textSize="12px" android:textColor="@color/fontColor" android:layout_width="wrap_content" android:id="@+id/hHoop1M" android:layout_height="wrap_content" android:text="  -  "></Button>
+					<Button android:onClick="hHoop1P" android:textSize="12px" android:textColor="@color/fontColor" android:layout_height="wrap_content" android:id="@+id/hHoop1P" android:text="  +  " android:layout_width="wrap_content"></Button>
+					<TextView android:textColor="@color/fontColor" android:text="0 in Hoop 1" android:layout_height="wrap_content" android:textSize="@dimen/sfontSize" android:id="@+id/hHoop1" android:layout_width="wrap_content"></TextView>
+				
+				</TableRow>
+				
+				<TableRow>
+				
+					<Button android:onClick="hHoop2M" android:textSize="12px" android:textColor="@color/fontColor" android:layout_width="wrap_content" android:id="@+id/hHoop2M" android:layout_height="wrap_content" android:text="  -  "></Button>
+					<Button android:onClick="hHoop2P" android:textSize="12px" android:textColor="@color/fontColor" android:layout_height="wrap_content" android:id="@+id/hHoop2P" android:text="  +  " android:layout_width="wrap_content"></Button>
+					<TextView android:textColor="@color/fontColor" android:text="0 in Hoop 2" android:layout_height="wrap_content" android:textSize="@dimen/sfontSize" android:id="@+id/hHoop2" android:layout_width="wrap_content"></TextView>
+				
+				</TableRow>
+				
+				<TableRow>
+				
+					<Button android:onClick="hHoop3M" android:textSize="12px" android:textColor="@color/fontColor" android:layout_width="wrap_content" android:id="@+id/hHoop3M" android:layout_height="wrap_content" android:text="  -  "></Button>
+					<Button android:onClick="hHoop3P" android:textSize="12px" android:textColor="@color/fontColor" android:layout_height="wrap_content" android:id="@+id/hHoop3P" android:text="  +  " android:layout_width="wrap_content"></Button>
+					<TextView android:textColor="@color/fontColor" android:text="0 in Hoop 3" android:layout_height="wrap_content" android:textSize="@dimen/sfontSize" android:id="@+id/hHoop3" android:layout_width="wrap_content"></TextView>
+				
+				</TableRow>
+				
+			</TableLayout>
+			
+			<TextView android:textColor="@color/fontColor" android:text="Tele-Op Mode" android:layout_height="wrap_content" android:textSize="@dimen/fontSize" android:layout_width="fill_parent" android:gravity="center" android:textStyle="bold"></TextView>
+			
+			<TableLayout
+				android:id="@+id/shotTable2"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				>
+				
+				<TableRow>
+				
+					<Button android:onClick="tHoop1M" android:textSize="12px" android:textColor="@color/fontColor" android:layout_width="wrap_content" android:id="@+id/tHoop1M" android:layout_height="wrap_content" android:text="  -  "></Button>
+					<Button android:onClick="tHoop1P" android:textSize="12px" android:textColor="@color/fontColor" android:layout_height="wrap_content" android:id="@+id/tHoop1P" android:text="  +  " android:layout_width="wrap_content"></Button>
+					<TextView android:textColor="@color/fontColor" android:text="0 in Hoop 1" android:layout_height="wrap_content" android:textSize="@dimen/sfontSize" android:id="@+id/tHoop1" android:layout_width="wrap_content"></TextView>
+				
+				</TableRow>
+				
+				<TableRow>
+				
+					<Button android:onClick="tHoop2M" android:textSize="12px" android:textColor="@color/fontColor" android:layout_width="wrap_content" android:id="@+id/tHoop2M" android:layout_height="wrap_content" android:text="  -  "></Button>
+					<Button android:onClick="tHoop2P" android:textSize="12px" android:textColor="@color/fontColor" android:layout_height="wrap_content" android:id="@+id/tHoop2P" android:text="  +  " android:layout_width="wrap_content"></Button>
+					<TextView android:textColor="@color/fontColor" android:text="0 in Hoop 2" android:layout_height="wrap_content" android:textSize="@dimen/sfontSize" android:id="@+id/tHoop2" android:layout_width="wrap_content"></TextView>
+				
+				</TableRow>
+				
+				<TableRow>
+				
+					<Button android:onClick="tHoop3M" android:textSize="12px" android:textColor="@color/fontColor" android:layout_width="wrap_content" android:id="@+id/tHoop3M" android:layout_height="wrap_content" android:text="  -  "></Button>
+					<Button android:onClick="tHoop3P" android:textSize="12px" android:textColor="@color/fontColor" android:layout_height="wrap_content" android:id="@+id/tHoop3P" android:text="  +  " android:layout_width="wrap_content"></Button>
+					<TextView android:textColor="@color/fontColor" android:text="0 in Hoop 3" android:layout_height="wrap_content" android:textSize="@dimen/sfontSize" android:id="@+id/tHoop3" android:layout_width="wrap_content"></TextView>
+				
+				</TableRow>
+				
+			</TableLayout>
+			
+			<TextView android:textColor="@color/fontColor" android:text="End Game" android:layout_height="wrap_content" android:textSize="@dimen/fontSize" android:layout_width="fill_parent" android:gravity="center" android:textStyle="bold"></TextView>
+			
+			<TableLayout
+				android:id="@+id/shotTable3"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				>
+				
+				<TableRow>
+					
+					<RadioButton android:onClick="balYes" android:checked="false" android:id="@+id/balanceYes" android:text="Yes" android:textSize="12px" android:textColor="@color/fontColor" />
+					<RadioButton android:onClick="balNo" android:checked="true" android:id="@+id/balanceNo" android:text="No" android:textSize="12px" android:textColor="@color/fontColor" />
+					<TextView android:textColor="@color/fontColor" android:text="  Balanced" android:layout_height="wrap_content" android:textSize="@dimen/fontSize" android:id="@+id/balance" android:layout_width="wrap_content"></TextView>
+					
+				</TableRow>
+
+			</TableLayout>
+		
+			<EditText 
+				android:id="@+id/comments"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:hint="Comments..."
+				android:gravity="left"
+				android:singleLine="true"
+				/>
+
+			<Button
+				android:id="@+id/submit"
+				android:onClick="submit"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:text="Submit"
+				android:textSize="@dimen/fontSize"
+				android:textColor="@color/fontColor"
+				/>
+
+</LinearLayout>
+</ScrollView>
+</LinearLayout>
