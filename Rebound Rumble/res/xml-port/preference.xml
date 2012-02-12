@@ -5,14 +5,8 @@
 	>
 	
 		<EditTextPreference android:title="Device Name" android:key="dev"></EditTextPreference>
-		<EditTextPreference android:title="File Multiples (edited with new Competition)" android:key="mult"></EditTextPreference>
-	
+		
 	</PreferenceCategory>
 	
-	<PreferenceCategory android:title="Reseting Competition"
-	>
-		<EditTextPreference android:title="Set New Competition First Match Num" android:key="newMatchNum"></EditTextPreference>
-		<Preference android:title="Start New Competition" android:key="newMatch"></Preference>
-	</PreferenceCategory>
 
 </PreferenceScreen>

@@ -27,28 +27,8 @@ public class PreferenceWindow extends PreferenceActivity {
 	        EditTextPreference device = (EditTextPreference) findPreference("dev");
 	        device.setText(getPreference.getString("dev", "device"));
 	        
-	        EditTextPreference multiple = (EditTextPreference) findPreference("mult");
-	        multiple.setText(getPreference.getString("mult", "0"));
 	        
-	        EditTextPreference newMatchN = (EditTextPreference) findPreference("newMatchNum");
-	        newMatchN.setText(getPreference.getString("newMatchNum", "1"));
-	        
-	        Preference newMatchButton = (Preference) findPreference("newMatch");
-	        newMatchButton.setOnPreferenceClickListener(
-	        			new OnPreferenceClickListener()
-	        			{
-	        				public boolean onPreferenceClick(Preference preference)
-	        				{
-	        					EditTextPreference multiple = (EditTextPreference) findPreference("mult");
-	        					multiple.setText(Integer.toString((Integer.parseInt(getPreference.getString("mult", "0")) + 1)));
-	        					
-	        					
-	        					
-	        			        return true;
-	                        }
-	                    } 
-	        			);
-	    }
+	 }
 	    
 	    
 	    
