@@ -4,7 +4,7 @@
     <string name="app_name">Rebound Rumble</string>
 <color name="bg">#FFFFFF</color>
 <color name="fontColor">#000000</color>
-<dimen name="fontSize">20px</dimen>
-<dimen name="sfontSize">14px</dimen>
+<dimen name="fontSize">32px</dimen>
+<dimen name="sfontSize">26px</dimen>
 
 </resources>
